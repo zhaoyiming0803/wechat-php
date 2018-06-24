@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>用户管理</title>
+  <link rel="stylesheet" type="text/css" href="http://www.zymseo.com/css/base.css">
+  <link rel="stylesheet" type="text/css" href="http://www.zymseo.com/css/bootstrap.min.css">
+  <script type="text/javascript" src="http://www.zymseo.com/js/demo.js"></script>
+  <script type="text/javascript" src="http://www.zymseo.com/js/vue.min.js"></script>
+</head>
+
+<body>
+  <div id="app" v-cloak>
+    <button type="button" class="btn btn-sm btn-primary" v-on:click="getUserList">获取所有用户列表</button>
+    <button type="button" class="btn btn-sm btn-primary" v-on:click="getBlackList">获取黑名单列表</button>
+    <button type="button" class="btn btn-sm btn-primary" v-on:click="batchBlackUser(1)">拉黑所选用户</button>
+    <button type="button" class="btn btn-sm btn-primary" v-on:click="batchBlackUser(0)">取消拉黑所选用户</button>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td></td>
+          <td>OPENID</td>
+          <td>操作</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(v, k) in userList" v-bind:key="k">
+          <td>
+            <input type="checkbox" v-bind:value="v" v-model="checkedUserList">
+          </td>
+          <td>{{v}}</td>
+          <td>
+            <button type="button" class="btn btn-sm btn-primary" v-on:click="getUserDetail(v)">查看用户基本信息</button>
+            <button type="button" class="btn btn-sm btn-primary" v-on:click="updateRemark(v)">更新备注</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="text-align: right;">用户总量：{{total}}</div>
+
+    <div v-show="showModal">
+      <div class="form-group">
+        <label for="exampleInputEmail1">设置备注</label>
+        <input type="text" class="form-control" v-model="remark">
+      </div>
+      <button type="submit" class="btn btn-default" v-on:click="confirmRemark">确认</button>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+
+      data: function () {
+        return {
+          userList: [],
+          total: 0,
+          showModal: false,
+          remark: '',
+          currentOpenid: '',
+          checkedUserList: []
+        };
+      },
+
+      created: function () {
+        this.getUserList();
+      },
+
+      methods: {
+        getBlackList: function () {
+          alert('为保密，先return，详情看github源码！https://github.com/zymseo/wx-public');
+          return;
+          var _this = this;
+          $.ajax({
+            type: 'POST',
+            url: './User.php?a=getBlackList',
+            data: {
+              begin_openid: ''
+            },
+            success: function (res) {
+              var res = JSON.parse(res);
+              if (res.total) {
+                _this.userList = res.data.openid;
+                _this.total = res.total;
+              }
+            }
+          });
+        },
+
+        getUserList: function () {
+          alert('为保密，先return，详情看github源码！https://github.com/zymseo/wx-public');
+          return;
+          var _this = this;
+          $.ajax({
+            type: 'POST',
+            url: './User.php?a=getUserList',
+            success: function (res) {
+              var res = JSON.parse(res);
+              _this.userList = res.data.openid;
+              _this.total = res.total;
+            }
+          });
+        },
+
+        getUserDetail: function (openid) {
+          alert('为保密，先return，详情看github源码！https://github.com/zymseo/wx-public');
+          return;
+          var _this = this;
+          $.ajax({
+            type: 'POST',
+            url: './User.php?a=getUserDetail',
+            data: {
+              openid: openid
+            },
+            success: function (res) {
+              var res = JSON.parse(res);
+              alert('国籍：' + res.country + '\n' + '省份：' + res.province + '\n' + '城市：' + res.city + '\n' + '昵称：' + res.nickname + '\n' + '备注：' + res.remark);
+              if (confirm('是否要查看当前用户头像？')) {
+                window.open(res.headimgurl);
+              }
+            }
+          });
+        },
+
+        updateRemark: function (openid) {
+          alert('未认证的公众号，该功能暂不可用！https://github.com/zymseo/wx-public');
+          return;
+          this.remark = '';
+          this.currentOpenid = openid;
+          this.showModal = true;
+        },
+
+        confirmRemark: function () {
+          alert('为保密，先return，详情看github源码！https://github.com/zymseo/wx-public');
+          return;
+          var _this = this;
+          $.ajax({
+            type: 'POST',
+            url: './User.php?a=updateRemak',
+            data: {
+              openid: _this.currentOpenid,
+              remark: _this.remark
+            },
+            success: function (res) {
+              var res = JSON.parse(res);
+              console.log(res);
+            }
+          });
+        },
+
+        batchBlackUser: function (status) {
+          alert('为保密，先return，详情看github源码！https://github.com/zymseo/wx-public');
+          return;
+          var _this = this,
+            url = '';
+
+          if (_this.checkedUserList.length === 0) {
+            alert('请选中需要拉黑的用户，每次最多20个！');
+            return;
+          }
+
+          if (status === 1) {
+            url = './User.php?a=batchBlackUser'
+          } else {
+            url = './User.php?a=batchCancelBalckUser';
+          }
+
+          $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+              openid_list: _this.checkedUserList
+            },
+            success: function (res) {
+              var res = JSON.parse(res);
+              if (res.errcode === 0 && res.errmsg === 'ok') {
+                alert('执行成功');
+              }
+            }
+          });
+        }
+
+      }
+    });
+  </script>
+</body>
+
+</html>

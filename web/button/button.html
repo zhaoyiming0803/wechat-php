@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义菜单管理</title>
+  <link rel="stylesheet" type="text/css" href="http://www.zymseo.com/css/base.css">
+  <link rel="stylesheet" type="text/css" href="http://www.zymseo.com/css/bootstrap.min.css">
+  <script type="text/javascript" src="http://www.zymseo.com/js/demo.js"></script>
+  <script type="text/javascript" src="http://www.zymseo.com/js/vue.min.js"></script>
+</head>
+
+<body>
+  <div id="app" v-cloak>
+    <button type="button" class="btn btn-sm btn-primary" v-on:click="selectButton">查询自定义菜单</button>
+    <button type="button" class="btn btn-sm btn-primary" v-on:click="createButton">创建自定义菜单</button>
+    <button type="button" class="btn btn-sm btn-primary" v-on:click="delButton">删除自定义菜单</button>
+  </div>
+
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+
+      data: function () {
+        return {
+
+        }
+      },
+
+      methods: {
+        selectButton: function () {
+          alert('为保密，先return，详情看github源码！https://github.com/zymseo/wx-public');
+          return;
+          $.ajax({
+            type: 'POST',
+            url: './Button.php?a=selectButton',
+            success: function (res) {
+              alert(res);
+            }
+          });
+        },
+
+        createButton: function () {
+          alert('为保密，先return，详情看github源码！https://github.com/zymseo/wx-public');
+          return;
+          $.ajax({
+            type: 'POST',
+            url: './Button.php?a=createButton',
+            success: function (res) {
+              var res = JSON.parse(res);
+              console.log(res);
+            }
+          });
+        },
+
+        delButton: function () {
+          alert('为保密，先return，详情看github源码！https://github.com/zymseo/wx-public');
+          return;
+          if (!confirm('确认删除所有菜单按钮？')) return;
+          $.ajax({
+            type: 'POST',
+            url: './Button.php?a=delButton',
+            success: function (res) {
+              var res = JSON.parse(res);
+              console.log(res);
+            }
+          });
+        }
+
+      }
+    });
+  </script>
+</body>
+
+</html>
