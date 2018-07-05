@@ -4,6 +4,8 @@
 
 微信JS-SDK开发文档：https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
 
+微信支付开发文档：  https://pay.weixin.qq.com/wiki/doc/api/index.html
+
 ### 功能抢先看（测试号只允许有100个粉丝）
 ![image](https://github.com/zymseo/wx-public/blob/master/qrcode.png)
 
