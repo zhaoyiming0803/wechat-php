@@ -6,6 +6,8 @@
 
 微信支付开发文档：  https://pay.weixin.qq.com/wiki/doc/api/index.html
 
+企业付款开发文档（微信返现）：https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_2
+
 ### 功能抢先看（测试号只允许有100个粉丝）
 ![image](https://github.com/zymseo/wx-public/blob/master/qrcode.png)
 
@@ -19,7 +21,5 @@
 
 ### 说明
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
-
 或者您可以 "follow" 一下，我会不断开源更多的有趣的项目! ^_^
-
 如有问题请直接在 Issues 中提，或者您发现问题并有非常好的解决方案，欢迎 PR! ^_^
