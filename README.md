@@ -7,9 +7,11 @@
 微信支付开发文档：  https://pay.weixin.qq.com/wiki/doc/api/index.html
 
 ### 功能抢先看（测试号只允许有100个粉丝）
+
 ![image](https://github.com/zymseo/wx-public/blob/master/qrcode.png)
 
 ### 目前已实现
+
 - [x] 获取access_token
 - [x] 获取签名
 - [x] 使用JS-SDK所需配置（/web/index.php）
@@ -17,7 +19,12 @@
 - [x] 消息接收与回复
 - [x] 更多功能正在逐步开发中，看着开发文档做即可.
 
+### 使用 nodejs 开发微信公众号源码：
+
+[https://github.com/zymfe/wechat-nodejs](https://github.com/zymfe/wechat-nodejs)
+
 ### 说明
+
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
 
 或者您可以 "follow" 一下，我会不断开源更多的有趣的项目! ^_^
