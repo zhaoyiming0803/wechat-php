@@ -1,3 +1,9 @@
+### 提示：
+
+当前 PHP 版代码仅供参考，线上运行的是 NodeJs 版，仓库： 
+
+[https://github.com/zymfe/wechat-nodejs](https://github.com/zymfe/wechat-nodejs)
+
 # 微信公众号开发
 
 微信公众号开发文档：https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1445241432
@@ -22,10 +28,6 @@
 - [x] 自定义公众号底部菜单栏
 - [x] 消息接收与回复
 - [x] 更多功能正在逐步开发中，看着开发文档做即可.
-
-### 使用 nodejs 开发微信公众号源码：
-
-[https://github.com/zymfe/wechat-nodejs](https://github.com/zymfe/wechat-nodejs)
 
 ### 说明
 
