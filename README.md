@@ -1,6 +1,6 @@
 ### 提示：
 
-当前 PHP 版代码仅供参考，线上运行的是 NodeJs 版，仓库： 
+当前 PHP 版代码仅供参考，线上运行的是 Node.js 版，仓库： 
 
 [https://github.com/zymfe/wechat-nodejs](https://github.com/zymfe/wechat-nodejs)
 
