@@ -34,7 +34,7 @@
   <div id="scanqrcode" class="btn">扫描二维码</div>
 
   <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-  <script type="text/javascript" src="http://www.zymseo.com/js/demo.js"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript">
     ;(function () {
 
@@ -80,7 +80,7 @@
             title: '微信jssdk测试分享', // 分享标题
             desc: '微信jssdk测试分享',
             link: '<?php echo $result["url"]; ?>', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-            imgUrl: 'http://www.zymseo.com/wx-public/images/avatar.jpg', // 分享图标
+            imgUrl: 'xxx', // 分享图标
             success: function () {
               console.log('share success');
             },
@@ -93,7 +93,7 @@
             title: '微信jssdk测试到QQ群分享', // 分享标题
             desc: '微信jssdk测试分享', // 分享描述
             link: '<?php echo $result["url"]; ?>', // 分享链接
-            imgUrl: 'http://www.zymseo.com/wx-public/images/avatar.jpg', // 分享图标
+            imgUrl: 'xxx', // 分享图标
             success: function () {},
             cancel: function () {}
           });
