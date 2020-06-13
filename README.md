@@ -2,7 +2,7 @@
 
 当前 PHP 版代码仅供参考，线上运行的是 Node.js 版，仓库： 
 
-[https://github.com/zymfe/wechat-nodejs](https://github.com/zymfe/wechat-nodejs)
+[https://github.com/zhaoyiming0803/wechat-nodejs](https://github.com/zhaoyiming0803/wechat-nodejs)
 
 # 微信公众号开发
 
@@ -18,7 +18,7 @@
 
 ### 功能抢先看（测试号只允许有100个粉丝）
 
-![image](https://github.com/zymfe/wx-public/blob/master/qrcode.png)
+![image](https://github.com/zhaoyiming0803/wechat-php/blob/master/qrcode.png)
 
 ### 目前已实现
 

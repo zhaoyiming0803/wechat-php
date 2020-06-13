@@ -56,7 +56,7 @@
      */
     private function event () {
       if (self::$msg->Event == 'subscribe') {
-        $content = '感谢您的订阅，当前公众号正在开发中（https://github.com/zymfe/wx-public），有问题请直接加我微信：zhao-seo，';
+        $content = '感谢您的订阅，当前公众号正在开发中（https://github.com/zhaoyiming0803/wx-public），有问题请直接加我微信：zhao-seo，';
       } else if (self::$msg->Event == 'unsubscribe') {
         $content = '取消订阅';
       } else if (self::$msg->Event == 'LOCATION') {
@@ -64,7 +64,7 @@
       } else if (self::$msg->EventKey == 'haha') {
         $content = '当前公众号正在开发中，更多自定义菜单功能，尽情期待^_^';
       } else {
-        $content = '欢迎来到我的测试公众号，当前公众号正在开发中（https://github.com/zymfe/wx-public）,有问题可以加我微信：zhao-seo';
+        $content = '欢迎来到我的测试公众号，当前公众号正在开发中（https://github.com/zhaoyiming0803/wx-public）,有问题可以加我微信：zhao-seo';
       }
       $this->text($content);
     }

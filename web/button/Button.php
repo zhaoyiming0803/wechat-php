@@ -27,7 +27,7 @@ class Button {
 		      {
             "type":"view",
             "name":"我的博客",
-            "url":"https://github.com/zymfe"
+            "url":"https://github.com/zhaoyiming0803"
           },
           {    
             "type":"click",
