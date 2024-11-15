@@ -16,6 +16,8 @@
 
 微信 JS 接口签名校验工具：https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign
 
+微信支付签名校验工具：https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=20_1
+
 ### 功能抢先看（测试号只允许有100个粉丝）
 
 ![image](https://github.com/zhaoyiming0803/wechat-php/blob/master/qrcode.png)
